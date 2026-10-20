@@ -1,0 +1,12 @@
+{
+  "name": "renzx-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RenzX Tools - kumpulan tools online dan direktori website",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

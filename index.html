@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090914">
+  <meta name="description" content="RenzX Tools — kumpulan tools online gratis dan direktori website pilihan.">
+  <title>RenzX Tools — Online Utilities</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="RenzX Tools beranda"><span class="brand-mark">R</span><span>RenzX <b>Tools</b></span></a>
+    <nav><a href="#tools">Tools</a><a href="#directory">Direktori</a><a href="#api-docs">API Docs</a></nav>
+    <div class="top-actions"><button class="ghost" id="admin-open">Admin</button><a class="button button-small" href="#tools">Mulai <span>↗</span></a></div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> TOOLKIT DIGITAL • GRATIS DIGUNAKAN</div>
+      <h1>Semua tools favoritmu,<br><span class="gradient-text">dalam satu tempat.</span></h1>
+      <p class="hero-copy">Utilitas praktis, direktori website, dan dokumentasi API dalam satu dashboard yang cepat dan simpel.</p>
+      <div class="search-wrap"><span class="search-icon">⌕</span><input id="global-search" type="search" placeholder="Cari tools, kategori, atau website..." autocomplete="off"><kbd>ENTER</kbd></div>
+      <div class="hero-stats"><div><strong id="tool-count">8</strong><span>Tools tersedia</span></div><i></i><div><strong id="site-count">6</strong><span>Website pilihan</span></div><i></i><div><strong>100%</strong><span>Gratis dipakai</span></div></div>
+      <div class="hero-orb"><div class="orb-core">RX</div><span class="orb-chip chip-one">JSON</span><span class="orb-chip chip-two">QR</span><span class="orb-chip chip-three">API</span></div>
+    </section>
+    <section class="section" id="tools">
+      <div class="section-head"><div><div class="eyebrow">PILIHAN UNTUKMU</div><h2>Tools <span class="gradient-text">Collection</span></h2><p>Tools kecil yang menyelesaikan pekerjaan sehari-hari.</p></div><span class="section-tag"><span class="pulse"></span> <span id="results-label">8 tools</span></span></div>
+      <div class="filters" id="category-filters"></div>
+      <div class="tool-grid" id="tool-grid"></div>
+    </section>
+    <section class="section directory-section" id="directory">
+      <div class="section-head"><div><div class="eyebrow">WEB DISCOVERY</div><h2>Direktori <span class="gradient-text">Website</span></h2><p>Temukan layanan dan sumber daya online yang berguna.</p></div><a class="text-link" href="#api-docs">Lihat API <span>↗</span></a></div>
+      <div class="directory-grid" id="directory-grid"></div>
+      <p class="small-note">Tautan eksternal mengarah ke situs masing-masing. Periksa kebijakan dan keamanan situs sebelum menggunakannya.</p>
+    </section>
+    <section class="section api-section" id="api-docs">
+      <div class="section-head"><div><div class="eyebrow">FOR DEVELOPERS</div><h2>API <span class="gradient-text">Documentation</span></h2><p>Endpoint publik sederhana untuk membaca daftar tools dan status layanan.</p></div><span class="api-pill">REST · JSON</span></div>
+      <div class="api-layout">
+        <div class="api-list">
+          <div class="endpoint"><span class="method get">GET</span><div><strong>/api/health</strong><small>Status layanan API</small></div><button class="copy-btn" data-copy="/api/health">Salin</button></div>
+          <div class="endpoint"><span class="method get">GET</span><div><strong>/api/tools</strong><small>Daftar tools bawaan</small></div><button class="copy-btn" data-copy="/api/tools">Salin</button></div>
+          <div class="endpoint"><span class="method get">GET</span><div><strong>/api/sites</strong><small>Direktori website</small></div><button class="copy-btn" data-copy="/api/sites">Salin</button></div>
+        </div>
+        <div class="code-panel"><div class="code-head"><span><i></i><i></i><i></i> response.json</span><button class="copy-btn" id="copy-example">Salin contoh</button></div><pre><code>{
+  <span class="code-key">"success"</span>: <span class="code-bool">true</span>,
+  <span class="code-key">"name"</span>: <span class="code-string">"RenzX Tools API"</span>,
+  <span class="code-key">"version"</span>: <span class="code-string">"1.0.0"</span>,
+  <span class="code-key">"status"</span>: <span class="code-string">"operational"</span>
+}</code></pre><div class="code-foot"><span>Content-Type: application/json</span><span>● Public</span></div></div>
+      </div>
+    </section>
+    <section class="cta">
+      <div class="cta-icon">✦</div><div><h3>Butuh tools tambahan?</h3><p>Kelola daftar lokal melalui panel admin atau kembangkan source code sesuai kebutuhanmu.</p></div><button class="button" id="cta-admin">Buka panel admin <span>↗</span></button>
+    </section>
+  </main>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">R</span><span>RenzX <b>Tools</b></span></a><span>© <span id="year"></span> RenzX Tools. Dibuat untuk produktivitas.</span><a href="#top" id="back-top">Kembali ke atas ↑</a></footer>
+
+  <div class="modal-backdrop" id="tool-modal" hidden><section class="modal tool-modal" role="dialog" aria-modal="true" aria-labelledby="tool-modal-title"><button class="modal-x" data-close="tool-modal" aria-label="Tutup">×</button><div id="tool-modal-body"></div></section></div>
+  <div class="modal-backdrop" id="admin-modal" hidden><section class="modal admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-title"><button class="modal-x" data-close="admin-modal" aria-label="Tutup">×</button><div class="eyebrow">LOCAL ADMIN</div><h2 id="admin-title">Kelola <span class="gradient-text">Konten</span></h2><p class="modal-intro">Panel ini menyimpan perubahan di browser perangkat ini saja (localStorage), bukan database bersama. Untuk produksi, tambahkan autentikasi dan database.</p>
+    <div class="admin-tabs"><button class="tab active" data-tab="tools-admin">Tools</button><button class="tab" data-tab="sites-admin">Website</button></div>
+    <div id="tools-admin" class="admin-pane"><form id="tool-form" class="admin-form"><input type="hidden" id="edit-id"><label>Nama tool<input id="tool-name" required placeholder="Contoh: Text Counter"></label><label>Kategori<select id="tool-category"><option>Developer</option><option>Text</option><option>Generator</option><option>Security</option></select></label><label>Deskripsi<input id="tool-description" required placeholder="Deskripsi singkat"></label><div class="form-actions"><button class="button" type="submit">Simpan tool</button><button class="ghost" type="button" id="reset-tool-form">Reset</button></div></form><div id="admin-tool-list" class="admin-list"></div></div>
+    <div id="sites-admin" class="admin-pane" hidden><form id="site-form" class="admin-form"><label>Nama website<input id="site-name" required placeholder="Contoh: MDN Web Docs"></label><label>Kategori<input id="site-category" required placeholder="Developer"></label><label>URL website<input id="site-url" type="url" required placeholder="https://example.com"></label><div class="form-actions"><button class="button" type="submit">Tambah website</button></div></form><div id="admin-site-list" class="admin-list"></div></div>
+    <div class="admin-bottom"><button class="ghost danger" id="reset-all">Pulihkan data bawaan</button><button class="button" data-close="admin-modal">Selesai</button></div>
+  </section></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
